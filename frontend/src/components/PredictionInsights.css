@@ -1,0 +1,50 @@
+.insights-section {
+  padding: 0 0 80px;
+}
+
+.insights-card {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.insights-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--color-primary-glow);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.insights-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.insights-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.insights-message {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+}
+
+.insights-secondary {
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+}
+
+@media (max-width: 480px) {
+  .insights-card { flex-direction: column; align-items: flex-start; }
+}

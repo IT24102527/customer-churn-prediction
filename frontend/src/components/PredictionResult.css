@@ -1,0 +1,191 @@
+.result-section {
+  padding: 0 0 80px;
+}
+
+.result-card {
+  max-width: 700px;
+  margin: 0 auto;
+  border-top-width: 3px;
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.result-churn {
+  border-top-color: var(--color-danger);
+}
+.result-no-churn {
+  border-top-color: var(--color-success);
+}
+
+/* Header */
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+.result-header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+.result-churn .result-header-icon {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(239,68,68,0.3);
+}
+.result-no-churn .result-header-icon {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border: 1px solid rgba(16,185,129,0.3);
+}
+
+.result-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+.result-subtitle {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+}
+
+/* Main result row */
+.result-main {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.result-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.result-item-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+.result-prediction-badge {
+  font-size: 0.9rem;
+  padding: 6px 16px;
+}
+
+/* Gauge */
+.result-gauge-section {
+  margin-bottom: 24px;
+}
+.result-gauge-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+.result-gauge-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+.result-gauge-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.result-gauge-track {
+  position: relative;
+  height: 12px;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-full);
+  overflow: visible;
+  border: 1px solid var(--color-border);
+}
+
+.result-gauge-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.risk-low      .result-gauge-fill,
+.result-gauge-fill.risk-low      { background: var(--color-success); }
+.risk-moderate .result-gauge-fill,
+.result-gauge-fill.risk-moderate { background: var(--color-warning); }
+.risk-high     .result-gauge-fill,
+.result-gauge-fill.risk-high     { background: var(--color-danger); }
+
+/* Threshold markers */
+.gauge-marker {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 18px;
+  background: var(--color-border-light);
+  border-radius: 2px;
+  transform: translateX(-50%);
+}
+
+/* Legend */
+.gauge-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 10px;
+}
+.gauge-legend-item {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.gauge-legend-item::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.gauge-legend-item.success::before { background: var(--color-success); }
+.gauge-legend-item.warning::before { background: var(--color-warning); }
+.gauge-legend-item.danger::before  { background: var(--color-danger); }
+
+/* Interpretation */
+.result-interpretation {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  padding: 16px;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.result-disclaimer {
+  font-size: 0.8rem;
+  color: var(--color-text-faint);
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Actions */
+.result-actions {
+  display: flex;
+  justify-content: flex-start;
+}
